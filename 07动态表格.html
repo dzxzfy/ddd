@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					var tr = $("<tr></tr>");
+					var td1 = $("<td></td>");
+					var td2 = $("<td></td>");
+					var td3 = $("<td></td>");
+					var td4 = $("<td></td>");
+					
+					tr.append(td1);
+					tr.append(td2);
+					tr.append(td3);
+					tr.append(td4);
+					
+					td1.html($("input").eq(0).val());
+					td2.html($("input").eq(1).val());
+					td3.html($("input").eq(2).val());
+					td4.html("<a href='#'>删除</a>");
+					
+					//设置或返回被选元素的属性值。
+					tr.attr("align","center");
+					$("#tab").append(tr);
+					
+					td4.click(function(){
+						tr.remove();
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="id" />
+		<input type="text" placeholder="姓名" />
+		<input type="text" placeholder="电话" />
+		<button id="btn">保存</button>
+		<table id="tab" border="1" width="400">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>TEL</th>
+				<th>操作</th>
+			</tr>
+		</table>
+	</body>
+</html>

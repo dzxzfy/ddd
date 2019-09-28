@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			window.onload = function(){
+//				var text = document.getElementById("text");
+//				var btn1 = document.getElementById("btn1");
+//				var btn2 = document.getElementById("btn2");
+//				//开始计时
+//				btn1.onclick = function(){
+//					var ms = 0 ;//毫秒
+//					var s = 0;//秒
+//					var m = 0;//分
+//					var h = 0 ;//时
+//					timer = setInterval(function(){
+//						ms+=200;
+//						if(ms==1000){
+//							ms=0;
+//							s+=1;
+//						}
+//						if(s==60){
+//							s=0;
+//							m+=1;
+//						}
+//						if(m==60){
+//							m=0;
+//							h+=1;
+//						}
+//						//js改变标签样式
+//						if(s>=10){
+//							text.style.color = "red";
+//							text.style.background = "gold";
+//							text.style.fontSize ="40px";//驼峰写法
+//						}
+//						
+//						//innerHTML 获取值（其它标签）
+//						//value 获取值（表单控件）
+//						//console.log(text.innerHTML);
+//						//设置
+//						//text.innerHTML = 12345;
+//						
+//						text.innerHTML = fn(h)+"小时"+fn(m)+"分"+fn(s)+"秒"+ms+"毫秒";
+//					},200)
+//				}
+//				
+//				//停止计时
+//				btn2.onclick = function(){
+//					clearInterval(timer);
+//				}
+//				//补0 函数
+//				function fn(n){
+//					return n<10?"0"+n:n;
+//				}
+//			}
+			$(function(){
+				var timer ;
+				$("#btn1").click(function(){
+					var ms = 0 ;//毫秒
+					var s = 0;//秒
+					var m = 0;//分
+					var h = 0 ;//时
+					timer = setInterval(function(){
+						ms+=200;
+						if(ms==1000){
+							ms=0;
+							s+=1;
+						}
+						if(s==60){
+							s=0;
+							m+=1;
+						}
+						if(m==60){
+							m=0;
+							h+=1;
+						}
+						$("#text").html(fn(h)+"小时"+fn(m)+"分"+fn(s)+"秒"+ms+"毫秒");
+					},200)	
+				})
+				function fn(n){
+					return n<10?"0"+n:n;
+				}
+				$("#btn2").click(function(){
+					clearInterval(timer);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<h1 id="text">00小时00分00秒0000毫秒</h1>
+		<button id="btn1">开始计时</button>
+		<button id="btn2">停止计时</button>
+	</body>
+</html>

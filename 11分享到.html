@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			span{
+				width: 20px;
+				float: left;
+				position: relative;
+				top: 20px;
+				background: palevioletred;
+			}
+			#box1{
+				width: 0px;
+				height: 100px;
+				float: left;
+				background: green;
+			}
+		</style>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#box").mouseenter(function(){
+					$("#box1").stop();
+					$("#box1").animate({
+						width:400	
+					},2000)
+				})
+				$("#box").mouseleave(function(){
+					$("#box1").stop();
+					$("#box1").animate({
+						width:0	
+					},2000)
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1"></div>
+			<span>分享到</span>
+		</div>
+	</body>
+</html>

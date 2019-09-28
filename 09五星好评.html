@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				font-size: 60px;
+			}
+			img{
+				vertical-align: bottom;
+			}
+		</style>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("img").click(function(){
+					var n = $(this).index();
+					var oimg = $(this).parent().find("img");
+					$(this).parent().find("img").attr("src","img/xing2.png");
+					for(var i=0;i<n;i++){
+						oimg.eq(i).attr("src","img/xing1.png");
+					}
+					if(n==1){
+						$(this).siblings(".span1").html("非常差")
+					}
+					if(n==2){
+						$(this).siblings(".span1").html("差")
+					}
+					if(n==3){
+						$(this).siblings(".span1").html("一般")
+					}
+					if(n==4){
+						$(this).siblings(".span1").html("好")
+					}
+					if(n==5){
+						$(this).siblings(".span1").html("非常好")
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span>服务态度:</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<span class="span1"></span>
+			</li>
+			<li>
+				<span>物流速度:</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<span class="span1"></span>
+			</li>
+			<li>
+				<span>产品质量:</span>
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<img src="img/xing2.png" />
+				<span class="span1"></span>
+			</li>
+		</ul>
+	</body>
+</html>

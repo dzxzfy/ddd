@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			window.onload = function(){
+//				var p = document.getElementsByTagName("p")[0];
+//				p.style.color = "red";
+//			}
+			
+			//文档就绪
+			$(function(){
+				//1.选择器
+				//	选取所有元素
+				//$("*").css("background","red");
+				
+				//	选取 class
+				$(".span1").css("background","red");
+				
+				//选取标签名
+				$("h1").css("background","blue");
+				
+				//id
+				$("#h").css("background","blue");
+				
+				//后代选择器
+				$(".list li").css("color","red");
+				
+				//筛选
+				//$(".list li").eq(2).css("background","red");
+				
+				//gt 大于
+				//$(".list li:gt(1)").css("background","red");
+				
+				//lt 小于
+				//$(".list li:lt(1)").css("background","blue");
+				
+				//not
+				$(".list li").not(".li3").css("font-size","60px");
+				
+				//添加事件
+//				$("#btn").click(function(){
+//					console.log("我被点击了");
+//				})
+				
+//				$("#btn").on("click",fn);
+//				function fn(){
+//					console.log("我被点击了");
+//				}
+
+				$("#btn").on("click",function(){
+					console.log("我被点击了");
+					//jq改变样式
+					//$(this).css("color","red");
+					$(this).css({"color":"red","font-size":"50px"});
+					//jq改变内容 html()
+					$(this).html("这是一个按钮");
+					$("input").eq(0).val("456");
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<p>jkfdhkjdfshk</p>
+		<span class="span1">决定是否可接受的话</span>
+		<span class="span1">决定是否可接受的话</span>
+		<span class="span1">决定是否可接受的话</span>
+		<h1>时间分厘卡圣诞节付款了</h1>
+		<h2 id="h">考了多少分解开了士大夫艰苦了</h2>
+		<ul class="list">
+			<li>1</li>
+			<li>1</li>
+			<li class="li3">1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<ul>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<button id="btn">按钮</button>
+		<input type="text" value="123" />
+		<input type="text" value="123" />
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				position: fixed;
+			}
+			body{
+				background: url(img/background.jpg) 0px 0px/100%;
+			}
+		</style>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+			    var timer = setInterval(function(){
+			    	var img = $("<img />");
+			    	var i = Math.ceil(Math.random()*19);
+			    	img.attr("src","img/snowflake"+i+".png");
+			    	var n = Math.floor(Math.random()*101);
+			    	img.css({"position":"fixed","top":"-50px","left":n+"%"});
+			    	$("body").append(img);
+			    	img.animate({
+			    		top:500
+			    	},10000,"linear",function(){
+			    		img.animate({
+			    			top:600,
+			    			opacity:0
+			    		},3000,"linear",function(){
+			    			img.remove();
+			    		})
+			    	})
+			    },1000)
+			})
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
